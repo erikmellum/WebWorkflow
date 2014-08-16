@@ -1,0 +1,141 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/*****Reset*****/  
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  
+pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
+
+/*****Border Box*****/  
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+a{
+  color: #000;
+  text-decoration: none;
+}
+body{
+  background: #EFEFEF;
+}
+
+#Wrapper{
+  margin: 0 auto;
+  width: 1100px;
+  height: 100%;
+  background: #EFEFEF;
+} 
+
+.row{
+  width: 100%;
+}
+
+.top{
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.middle{
+  height: 500px;
+
+}
+
+.topNavLink{
+  margin: 50px 0px;
+  padding: 13px 2px;
+  text-align: center;
+  box-shadow: 2px 2px 10px 0px #333;
+  background: -webkit-linear-gradient(#CCCCCC, #EEEEEE);
+  background: -moz-linear-gradient(#CCCCCC, #EEEEEE);
+  background: -o-linear-gradient(#CCCCCC, #EEEEEE);
+  background: linear-gradient(#CCCCCC, #EEEEEE);
+  transition-property: background, box-shadow, height, width, font-size;
+  transition-duration: .5s;
+  color: #333;
+  width: 200px;
+  height: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.topNavLink:hover{
+  background: -webkit-linear-gradient(#EEEEEE, #CCCCCC);
+  background: -moz-linear-gradient(#EEEEEE, #CCCCCC);
+  background: -o-linear-gradient(#EEEEEE, #CCCCCC);
+  background: linear-gradient(#EEEEEE, #CCCCCC);
+  box-shadow: 0px 5px 10px 2px #333;
+  height: 55px;
+  width: 210px;
+  font-size: 110%;
+}
+
+.active{
+  background: -webkit-linear-gradient(#888888, #AAAAAA) !important;
+  background: -moz-linear-gradient(#888888, #AAAAAA) !important;
+  background: -o-linear-gradient(#888888, #AAAAAA) !important;
+  background: linear-gradient(#888888, #AAAAAA) !important;
+}
+
+#logo{
+  display: block;
+  margin: 0px auto;
+}
+
+.slider{
+  height: 70px;
+  width: 100%;
+}
+
+#SliderText{
+  text-align: center;
+}
+
+.header{
+  margin: 20px 0px;
+  text-align: center;
+  color: #8E2323;
+  font-family: 'Roboto', sans-serif;
+}
+
+#MissionStatement{
+  margin: 20px 0px;
+}
+#LearnMore{
+  border-radius: 5px;
+  margin: 20px auto;
+  display: block;
+  background: -webkit-linear-gradient(#4AC948, #63AB62);
+  background: -moz-linear-gradient(#4AC948, #63AB62);
+  background: -o-linear-gradient(#4AC948, #63AB62);
+  background: linear-gradient(#4AC948, #63AB62);
+  transition-property: font-size, padding, outline, height, width;
+  transition-duration: .5s;
+  width: 200px;
+  height: 50px;
+  padding: 15px 0px;
+  text-align: center;
+  color: #EEEEEE;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+}
+
+#LearnMore:hover{
+  font-size: 110%;
+  outline: #00FF00 solid thin;
+  height: 53px;
+  width: 205px;
+}
+
+
+#LearnMore:focus{
+  outline: 0;
+}
+
+
+.bottom{
+  height: 200px;
+  text-align: center;
+}
+
+.bottomNavLink{
+  margin: 40px 5px;
+}
