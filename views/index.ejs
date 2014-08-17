@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    
-  </head>
-  <body>
+  <head><% include partials/page/head.ejs %></head>
+  <body class="<%= classname %>">
     <div id="Wrapper">
+      <header><% include partials/page/header.ejs %></header>
       <div class="top row">
         <a id="Home" class="topNavLink active" href="">Home</a>
-        <a id="About" class="topNavLink" href="about/about.html">About</a>
+        <a id="About" class="topNavLink" href="">About</a>
         <a id="Join / Schedule" class="topNavLink" href="">Join / Schedule</a>
         <a id="Contact" class="topNavLink" href="">Tools</a>
         <a id="Learn" class="topNavLink" href="">Learn</a>
         <a id="Contact" class="topNavLink" href="">Contact</a>
       </div>
       <div class="slider row">
-        <h3 id="SliderText" class="header">This text will cycle with news and event information</h3>
+        <h3 id="SliderText" class="header"><%= pagetitle %>This text will cycle with news and event information</h3>
       </div>
+
       <div class="middle row">
       <img id="logo" src="img/logo.png" alt="Club Logo">
       <h4 id="MissionStatement" class="header"><q>Become a better web developer, create projects to showcase, collaborate with friends, and give back to the community</q></h4>
@@ -29,6 +29,16 @@
         <a id="Members" class="bottomNavLink">Members</a>
         <a id="History" class="bottomNavLink">History</a>
       </div>
+      <% if (typeof(speakers) !== 'undefined') { %>
+      <ul>
+        <% for (var i=0; i<speakers.length; i++) { %>
+          <li><%= speakers[i] %></li>
+        <% } %>
+      </ul>
+      <% } %>
+    </div>
+      <footer><% include partials/page/jsdefaults.ejs %></footer>
+      <% include partials/page/jsdefaults.ejs %>
     </div>
   </body>
 </html>
