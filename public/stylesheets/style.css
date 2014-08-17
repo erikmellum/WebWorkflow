@@ -46,7 +46,6 @@ html, body {
 /* line 1, ../foundation.min.scss */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -1593,7 +1592,8 @@ button, .button {
   background-color: #008cba;
   border-color: #007095;
   color: #fff;
-  transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+          transition: background-color 300ms ease-out;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -1720,7 +1720,8 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
   color: #fff;
   cursor: default;
   opacity: 0.7;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -1745,7 +1746,8 @@ button.disabled.secondary, button[disabled].secondary, .button.disabled.secondar
   color: #333;
   cursor: default;
   opacity: 0.7;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -1770,7 +1772,8 @@ button.disabled.success, button[disabled].success, .button.disabled.success, .bu
   color: #fff;
   cursor: default;
   opacity: 0.7;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -1795,7 +1798,8 @@ button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[d
   color: #fff;
   cursor: default;
   opacity: 0.7;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -1987,13 +1991,15 @@ meta.foundation-mq-topbar {
   top: 50%;
   margin-top: -8px;
   right: 15px;
-  box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+  -webkit-box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+          box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
   width: 16px;
 }
 
 /* line 1, ../foundation.min.scss */
 .top-bar .toggle-topbar.menu-icon a span:hover:after {
-  box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+  -webkit-box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+          box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -2014,7 +2020,8 @@ meta.foundation-mq-topbar {
 
 /* line 1, ../foundation.min.scss */
 .top-bar.expanded .toggle-topbar a::after {
-  box-shadow: 0 10px 0 1px #888,0 16px 0 1px #888,0 22px 0 1px #888;
+  -webkit-box-shadow: 0 10px 0 1px #888,0 16px 0 1px #888,0 22px 0 1px #888;
+          box-shadow: 0 10px 0 1px #888,0 16px 0 1px #888,0 22px 0 1px #888;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -2022,7 +2029,8 @@ meta.foundation-mq-topbar {
   left: 0;
   position: relative;
   width: auto;
-  transition: left 300ms ease-out;
+  -webkit-transition: left 300ms ease-out;
+          transition: left 300ms ease-out;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -2399,7 +2407,8 @@ meta.foundation-mq-topbar {
 
   /* line 1, ../foundation.min.scss */
   .top-bar-section {
-    transition: none 0 0;
+    -webkit-transition: none 0 0;
+            transition: none 0 0;
     left: 0 !important;
   }
 
@@ -2706,7 +2715,8 @@ meta.foundation-mq-topbar {
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  transition: opacity 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out;
+          transition: opacity 300ms ease-out;
   background-color: #008cba;
   border-color: #0078a0;
   color: #fff;
@@ -3242,13 +3252,16 @@ meta.foundation-mq-topbar {
   display: inline-block;
   border: solid 4px #fff;
   max-width: 100%;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
-  transition: all 200ms ease-out;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 200ms ease-out;
+          transition: all 200ms ease-out;
 }
 
 /* line 1, ../foundation.min.scss */
 .th:hover, .th:focus {
-  box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
+  -webkit-box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
+          box-shadow: 0 0 6px 1px rgba(0, 140, 186, 0.5);
 }
 
 /* line 1, ../foundation.min.scss */
@@ -3417,37 +3430,17 @@ meta.foundation-mq-topbar {
     -webkit-transform: rotate(360deg);
   }
 }
-@-moz-keyframes rotate {
-  /* line 1, ../foundation.min.scss */
-  from {
-    -moz-transform: rotate(0deg);
-  }
-
-  /* line 1, ../foundation.min.scss */
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-o-keyframes rotate {
-  /* line 1, ../foundation.min.scss */
-  from {
-    -o-transform: rotate(0deg);
-  }
-
-  /* line 1, ../foundation.min.scss */
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
 @keyframes rotate {
   /* line 1, ../foundation.min.scss */
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 
   /* line 1, ../foundation.min.scss */
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /* line 1, ../foundation.min.scss */
@@ -3504,10 +3497,14 @@ meta.foundation-mq-topbar {
   border: solid 3px;
   border-color: #555 #fff;
   border-radius: 1000px;
-  animation-name: rotate;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -4553,7 +4550,8 @@ blockquote, blockquote p {
   * {
     background: transparent !important;
     color: #000 !important;
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
     text-shadow: none !important;
   }
 
@@ -4793,7 +4791,8 @@ ul.pagination li a, ul.pagination li button {
   font-weight: normal;
   font-size: 1em;
   line-height: inherit;
-  transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+          transition: background-color 300ms ease-out;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -5127,7 +5126,8 @@ dialog, .reveal-modal {
   background-color: #fff;
   padding: 1.25rem;
   border: solid 1px #666;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 @media only screen and (max-width: 40em) {
@@ -5608,7 +5608,8 @@ dialog.full, .reveal-modal.full {
   /* line 1, ../foundation.min.scss */
   .clearing-assembled .clearing-container .carousel > ul li a.th {
     border: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     display: block;
   }
 
@@ -5908,7 +5909,8 @@ dialog.full, .reveal-modal.full {
   position: absolute;
   border-radius: 3px;
   z-index: 102;
-  box-shadow: 0 0 15px #fff;
+  -webkit-box-shadow: 0 0 15px #fff;
+          box-shadow: 0 0 15px #fff;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -6030,9 +6032,6 @@ dialog.full, .reveal-modal.full {
   position: relative;
   width: 100%;
   -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
   transition: transform 500ms ease;
 }
 
@@ -6132,7 +6131,8 @@ dialog.full, .reveal-modal.full {
   padding: 0;
   color: #fff;
   position: relative;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 /* line 1, ../foundation.min.scss */
@@ -6144,13 +6144,15 @@ dialog.full, .reveal-modal.full {
   top: 50%;
   margin-top: -0.5rem;
   left: 0.90625rem;
-  box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+  -webkit-box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
+          box-shadow: 0 0px 0 1px #fff,0 7px 0 1px #fff,0 14px 0 1px #fff;
   width: 1rem;
 }
 
 /* line 1, ../foundation.min.scss */
 .tab-bar .menu-icon span:hover:after {
-  box-shadow: 0 0px 0 1px #b3b3b3,0 7px 0 1px #b3b3b3,0 14px 0 1px #b3b3b3;
+  -webkit-box-shadow: 0 0px 0 1px #b3b3b3,0 7px 0 1px #b3b3b3,0 14px 0 1px #b3b3b3;
+          box-shadow: 0 0px 0 1px #b3b3b3,0 7px 0 1px #b3b3b3,0 14px 0 1px #b3b3b3;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -6163,14 +6165,14 @@ dialog.full, .reveal-modal.full {
   overflow-y: auto;
   background: #333;
   z-index: 1001;
-  box-sizing: content-box;
-  transition: transform 500ms ease 0s;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
+          transition: transform 500ms ease 0s;
   -webkit-overflow-scrolling: touch;
   -ms-transform: translate(-100.5%, 0);
   -webkit-transform: translate3d(-100.5%, 0, 0);
-  -moz-transform: translate3d(-100.5%, 0, 0);
   -ms-transform: translate3d(-100.5%, 0, 0);
-  -o-transform: translate3d(-100.5%, 0, 0);
   transform: translate3d(-100.5%, 0, 0);
   left: 0;
 }
@@ -6190,14 +6192,14 @@ dialog.full, .reveal-modal.full {
   overflow-y: auto;
   background: #333;
   z-index: 1001;
-  box-sizing: content-box;
-  transition: transform 500ms ease 0s;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
+          transition: transform 500ms ease 0s;
   -webkit-overflow-scrolling: touch;
   -ms-transform: translate(100.5%, 0);
   -webkit-transform: translate3d(100.5%, 0, 0);
-  -moz-transform: translate3d(100.5%, 0, 0);
   -ms-transform: translate3d(100.5%, 0, 0);
-  -o-transform: translate3d(100.5%, 0, 0);
   transform: translate3d(100.5%, 0, 0);
   right: 0;
 }
@@ -6234,7 +6236,8 @@ ul.off-canvas-list li a {
   padding: 0.66667rem;
   color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid #262626;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -6246,18 +6249,18 @@ ul.off-canvas-list li a:hover {
 .move-right > .inner-wrap {
   -ms-transform: translate(15.625rem, 0);
   -webkit-transform: translate3d(15.625rem, 0, 0);
-  -moz-transform: translate3d(15.625rem, 0, 0);
   -ms-transform: translate3d(15.625rem, 0, 0);
-  -o-transform: translate3d(15.625rem, 0, 0);
   transform: translate3d(15.625rem, 0, 0);
 }
 
 /* line 1, ../foundation.min.scss */
 .move-right .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
   cursor: pointer;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   display: block;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
@@ -6279,18 +6282,18 @@ ul.off-canvas-list li a:hover {
 .move-left > .inner-wrap {
   -ms-transform: translate(-15.625rem, 0);
   -webkit-transform: translate3d(-15.625rem, 0, 0);
-  -moz-transform: translate3d(-15.625rem, 0, 0);
   -ms-transform: translate3d(-15.625rem, 0, 0);
-  -o-transform: translate3d(-15.625rem, 0, 0);
   transform: translate3d(-15.625rem, 0, 0);
 }
 
 /* line 1, ../foundation.min.scss */
 .move-left .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
   cursor: pointer;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   display: block;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
@@ -6312,8 +6315,6 @@ ul.off-canvas-list li a:hover {
 .offcanvas-overlap .left-off-canvas-menu, .offcanvas-overlap .right-off-canvas-menu {
   -ms-transform: none;
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
   transform: none;
   z-index: 1003;
 }
@@ -6321,9 +6322,11 @@ ul.off-canvas-list li a:hover {
 /* line 1, ../foundation.min.scss */
 .offcanvas-overlap .exit-off-canvas {
   -webkit-backface-visibility: hidden;
-  transition: background 300ms ease;
+  -webkit-transition: background 300ms ease;
+          transition: background 300ms ease;
   cursor: pointer;
-  box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   display: block;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
@@ -7175,7 +7178,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   background-color: #fff;
   font-family: inherit;
   border: 1px solid #ccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.75);
   display: block;
   font-size: 0.875rem;
@@ -7184,14 +7188,15 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   height: 2.3125rem;
   width: 100%;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  transition: box-shadow 0.45s,border-color 0.45s ease-in-out;
+  -webkit-transition: -webkit-box-shadow 0.45s,border-color 0.45s ease-in-out;
+          transition: box-shadow 0.45s,border-color 0.45s ease-in-out;
 }
 
 /* line 1, ../foundation.min.scss */
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus {
-  box-shadow: 0 0 5px #999;
+  -webkit-box-shadow: 0 0 5px #999;
+          box-shadow: 0 0 5px #999;
   border-color: #999;
 }
 
@@ -8166,7 +8171,8 @@ div.switch label {
   width: 4rem;
   height: 2rem;
   cursor: pointer;
-  transition: left 0.15s ease-out;
+  -webkit-transition: left 0.15s ease-out;
+          transition: left 0.15s ease-out;
 }
 
 /* line 1, ../foundation.min.scss */
@@ -8191,7 +8197,6 @@ div.switch label:after {
   width: 1.5rem;
   height: 1.5rem;
   -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
 }
 
@@ -8825,7 +8830,6 @@ pre, form, fieldset, table, th, td {
 /*****Border Box*****/
 /* line 8, ../main.scss */
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -8857,9 +8861,19 @@ body {
 /* line 31, ../main.scss */
 .top {
   height: 120px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* line 38, ../main.scss */
@@ -8872,13 +8886,15 @@ body {
   margin: 50px 0px;
   padding: 13px 2px;
   text-align: center;
-  box-shadow: 2px 2px 10px 0px #333;
+  -webkit-box-shadow: 2px 2px 10px 0px #333;
+          box-shadow: 2px 2px 10px 0px #333;
   background: -webkit-linear-gradient(#cccccc, #eeeeee);
-  background: -moz-linear-gradient(#cccccc, #eeeeee);
-  background: -o-linear-gradient(#cccccc, #eeeeee);
+  background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#eeeeee));
   background: linear-gradient(#cccccc, #eeeeee);
-  transition-property: background, box-shadow, height, width, font-size;
-  transition-duration: .5s;
+  -webkit-transition-property: background, -webkit-box-shadow, height, width, font-size;
+          transition-property: background, box-shadow, height, width, font-size;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
   color: #333;
   width: 200px;
   height: 50px;
@@ -8888,10 +8904,10 @@ body {
 /* line 60, ../main.scss */
 .topNavLink:hover {
   background: -webkit-linear-gradient(#eeeeee, #cccccc);
-  background: -moz-linear-gradient(#eeeeee, #cccccc);
-  background: -o-linear-gradient(#eeeeee, #cccccc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
   background: linear-gradient(#eeeeee, #cccccc);
-  box-shadow: 0px 5px 10px 2px #333;
+  -webkit-box-shadow: 0px 5px 10px 2px #333;
+          box-shadow: 0px 5px 10px 2px #333;
   height: 55px;
   width: 210px;
   font-size: 110%;
@@ -8900,8 +8916,7 @@ body {
 /* line 71, ../main.scss */
 .active {
   background: -webkit-linear-gradient(#888888, #aaaaaa) !important;
-  background: -moz-linear-gradient(#888888, #aaaaaa) !important;
-  background: -o-linear-gradient(#888888, #aaaaaa) !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#888888), to(#aaaaaa)) !important;
   background: linear-gradient(#888888, #aaaaaa) !important;
 }
 
@@ -8941,11 +8956,12 @@ body {
   margin: 20px auto;
   display: block;
   background: -webkit-linear-gradient(#4ac948, #63ab62);
-  background: -moz-linear-gradient(#4ac948, #63ab62);
-  background: -o-linear-gradient(#4ac948, #63ab62);
+  background: -webkit-gradient(linear, left top, left bottom, from(#4ac948), to(#63ab62));
   background: linear-gradient(#4ac948, #63ab62);
-  transition-property: font-size, padding, outline, height, width;
-  transition-duration: .5s;
+  -webkit-transition-property: font-size, padding, outline, height, width;
+          transition-property: font-size, padding, outline, height, width;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
   width: 200px;
   height: 50px;
   padding: 15px 0px;
@@ -9189,8 +9205,8 @@ figure {
  */
 /* line 209, ../normalize.scss */
 hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 
@@ -9316,7 +9332,8 @@ input {
 /* line 332, ../normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -9342,7 +9359,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
