@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <head lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp">
+  <head>
     <title>Chico State Web Development</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/style.min.css"/>
@@ -15,8 +15,9 @@
     <script src="public/javascripts/controllers.js"></script> 
    
   </head>
-  <body>
+  <body ng-controller="WelcomeCntrl">
     <div id="Wrapper">
+      <p>{{meetings.name}}</p>
       <div class="top row">
         <a id="Home" class="topNavLink active" href="">Home</a>
         <a id="About" class="topNavLink" href="about/about.html">About</a>

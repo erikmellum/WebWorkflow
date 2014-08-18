@@ -10,7 +10,21 @@ var gulp = require ('gulp'),
     rename = require('gulp-rename'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
-    server = lr();
+    express = require('express'),
+    embedlr = require('gulp-embedlr'),
+    connectlr = require('connect-livereload'),
+    serverport = 5000,
+    connectlrport = 35729;
+
+var server = express();
+
+server.use(connectlr({port: connectlrport}));
+
+server.use(express.static('./dist'));
+
+server.all('/*', function(req, res){
+  res.sendfile('index.html', { root: 'public'});
+});
 
 var jsSources = [
   'components/scripts/*.js'
@@ -23,6 +37,33 @@ var styleSources = [
 var coffeeSources = [
   'components/coffee/*.coffee'
 ];
+
+var viewSources = [
+  'index.html', 
+  'views/**/*.html'
+];
+
+gulp.task('dev', function(){
+  server.listen(serverport);
+  lr.listen(connectlrport);
+  gulp.run('watch');
+});
+
+gulp.task('lint', function(){
+  gulp.src('public/javascripts/script.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
+});
+
+gulp.task('browserify', function() {
+  gulp.src(['public/javascripts/scripts.js'])
+  .pipe(browserify({
+    insertGlobals: true,
+    debug: true
+  }))
+  .pipe(concat('bundle.js'))
+  .pipe(gulp.dest('public/javascripts'));
+});
 
 gulp.task('js', function() {
   gulp.src(jsSources)
@@ -39,17 +80,25 @@ gulp.task('coffee', function() {
   .pipe(gulp.dest('components/scripts'));
 });
 
+gulp.task('views', function(){
+  gulp.src('index.html')
+  .pipe(gulp.dest('public/'));
+  gulp.src('views/**/*')
+  // Will be put in the dist/views folder
+  .pipe(gulp.dest('public/views/'));
+});
+
 gulp.task('watch', function(){
-  var server = livereload();
   gulp.watch(jsSources, ['js']);
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(styleSources, ['styles']);
-  gulp.watch(['public/javascripts/*.js', 'public/stylesheets/*.css', '*.html'], function(e){
+  gulp.watch(['lint','browserify']);
+  gulp.watch(['public/javascripts/*.js', 'public/stylesheets/*.css', 'views/**/*.html'], ['views'], function(e){
     server.changed(e.path);
   });
 });
 
-gulp.task('default', ['styles', 'js', 'watch', 'coffee']);
+gulp.task('default', ['styles', 'js', 'watch', 'coffee', 'lint', 'browserify']);
 
 gulp.task('styles', function(){
   gulp.src(styleSources)

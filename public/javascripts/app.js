@@ -6,11 +6,11 @@ var myApp = angular.module('myApp', [
 myApp.config(['$routeProvider', function($routeProvider){
   $routeProvider.
   when('/meetings', {
-    templateUrl: 'partials/meetings.html',
+    templateUrl: 'views/meetings.html',
     controller: 'MeetingsController'
   }).
   when('/details/:meetingId', {
-    templateUrl: 'partials/details.html',
+    templateUrl: 'views/details.html',
     controller: 'DetailsController'
   }).
   otherwise({
