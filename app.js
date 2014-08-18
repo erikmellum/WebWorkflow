@@ -4,11 +4,10 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+livereload = require('express-livereload');
 var routes = require('./routes/index');
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -20,6 +19,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+var data = require('./data.json');
+app.locals.appdata = require('./data.json');
 app.use('/', routes);
 
 /// catch 404 and forward to error handler

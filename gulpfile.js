@@ -9,6 +9,7 @@ var gulp = require ('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
     server = lr();
 
 var jsSources = [
@@ -16,15 +17,11 @@ var jsSources = [
 ];
 
 var styleSources = [
-  'components/sass/*'
+  'components/sass/main.scss'
 ];
 
 var coffeeSources = [
   'components/coffee/*.coffee'
-];
-
-var viewSources = [
-  'views/index.ejs'
 ];
 
 function notifyLiveReload(event) {
@@ -54,6 +51,7 @@ gulp.task('express', function() {
 gulp.task('js', function() {
   gulp.src(jsSources)
   .pipe(uglify())
+  .pipe(jshint())
   .pipe(concat('script.js'))
   .pipe(livereload())
   .pipe(gulp.dest('public/javascripts'));
@@ -71,14 +69,12 @@ gulp.task('watch', function(){
   gulp.watch(jsSources, ['js']);
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(styleSources, ['styles']);
-  gulp.watch(viewSources, notifyLiveReload);
-  gulp.watch('views/*.ejs', notifyLiveReload);
   gulp.watch('public/stylesheets/*.css', notifyLiveReload);
   gulp.watch('public/javascripts/*.js', notifyLiveReload);
   gulp.watch('*.html', notifyLiveReload);
-})
+});
 
-gulp.task('default', ['styles', 'js',  'express', 'livereload', 'watch', 'coffee']);
+gulp.task('default', ['styles', 'js', 'express', 'livereload', 'watch', 'coffee']);
 
 gulp.task('styles', function(){
   gulp.src(styleSources)
@@ -91,10 +87,4 @@ gulp.task('styles', function(){
   .pipe(minifycss())
   .pipe(livereload())
   .pipe(gulp.dest('public/stylesheets'));
-});
-
-gulp.task('views', function(){
-  gulp.src(viewSources)
-  .pipe(livereload())
-  .pipe(gulp.dest('views'));
 });

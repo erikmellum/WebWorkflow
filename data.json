@@ -1,0 +1,11 @@
+{
+  "meeting" : {
+    "date" : "Thursday, September 1st",
+    "time" : "5-7pm",
+    "where": {
+      "name"   : "O'Connell 123",
+      "img"    : "noimage.jpg", 
+      "address": "Chico State"
+    }
+  }
+}

@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include partials/template/head.ejs %>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>asdf to <%= title %></p>
+    <div id="Wrapper">
+      <header>
+        <% include partials/template/header.ejs %>
+      </header>
+      <section class="content">
+        <% include partials/page/home.ejs %>
+      </section>
+      <footer>
+        <% include partials/template/footer.ejs %>
+      </footer>
+      <% include partials/template/jsdefaults.ejs %>
+    </div>
   </body>
 </html>
