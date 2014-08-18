@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head lang="en" ng-app="myApp">
     <title>Chico State Web Development</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/style.min.css"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/foundation.min.css"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/normalize.min.css"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/font-awesome.min.css"/>
+    <script src="public/javascripts/angular.min.js"></script>
+    <script src="public/javascripts/angular-route.min.js"></script>
+    <script src="public/javascripts/vendor/modernizr.js"></script>
+    <script src="public/javascripts/script.js"></script> 
+    <script src="public/javascripts/app.js"></script> 
+    <script src="public/javascripts/controllers.js"></script> 
+   
   </head>
   <body>
     <div id="Wrapper">
@@ -19,7 +26,7 @@
         <a id="Contact" class="topNavLink" href="">Contact</a>
       </div>
       <div class="slider row">
-        <h3 id="SliderText" class="header">This text will cycle with news and event information</h3>
+        
       </div>
       <div class="middle row">
       <img id="logo" src="public/images/logo.png" alt="Club Logo">
@@ -33,11 +40,13 @@
         <a id="Events" class="bottomNavLink">Events</a>
         <a id="Members" class="bottomNavLink">Members</a>
         <a id="History" class="bottomNavLink">History</a>
+        
       </div>
-      <script src="public/javascripts/script.js"></script> 
+      <script src="public/javascripts/vendor/jquery.js"></script>
       <script src="public/javascripts/foundation.min.js"></script>
-      <script src="public/javascripts/angular.min.js"></script>
       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </div>
   </body>
 </html>
+
+

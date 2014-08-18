@@ -1,0 +1,43 @@
+
+[
+  {
+      "name" : "The 1st Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 2nd Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 3rd Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 4th Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 5th Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 6th Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 7th Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  },
+  {
+      "name" : "The 8th Meeting",
+      "date" : "Thursday, September 1st",
+      "time" : "5-7pm",
+  }
+]

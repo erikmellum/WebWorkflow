@@ -44,7 +44,7 @@ gulp.task('watch', function(){
   gulp.watch(jsSources, ['js']);
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(styleSources, ['styles']);
-  gulp.watch(['public/javascripts/script.js','*.html'], function(e){
+  gulp.watch(['public/javascripts/*.js', 'public/stylesheets/*.css', '*.html'], function(e){
     server.changed(e.path);
   });
 });
