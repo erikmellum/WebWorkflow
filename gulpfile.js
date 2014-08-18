@@ -12,7 +12,6 @@ var gulp = require ('gulp'),
     jshint = require('gulp-jshint'),
     express = require('express'),
     embedlr = require('gulp-embedlr'),
-    browserify = require('gulp-browserify'),
     connectlr = require('connect-livereload');
 
 var jsSources = [
@@ -48,16 +47,6 @@ gulp.task('lint', function(){
   .pipe(jshint.reporter('default'));
 });
 
-gulp.task('browserify', function() {
-  gulp.src(['public/javascripts/scripts.js'])
-  .pipe(browserify({
-    insertGlobals: true,
-    debug: true
-  }))
-  .pipe(concat('bundle.js'))
-  .pipe(gulp.dest('public/javascripts'));
-});
-
 gulp.task('js', function() {
   gulp.src(jsSources)
   .pipe(uglify())
@@ -85,13 +74,13 @@ gulp.task('watch', function(){
   gulp.watch(jsSources, ['js']);
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(styleSources, ['styles']);
-  gulp.watch(['lint','browserify']);
+  gulp.watch(['lint']);
   gulp.watch(['public/javascripts/*.js', 'public/stylesheets/*.css', 'views/**/*.html'], ['views'], function(e){
     server.changed(e.path);
   });
 });
 
-gulp.task('default', ['styles', 'js', 'watch', 'coffee', 'lint', 'browserify', 'express']);
+gulp.task('default', ['styles', 'js', 'watch', 'coffee', 'lint', 'express']);
 
 gulp.task('styles', function(){
   gulp.src(styleSources)
