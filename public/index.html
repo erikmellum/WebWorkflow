@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <title>Chico State Web Development</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/style.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/foundation.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/normalize.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/font-awesome.min.css"/>
+    <script src="public/javascripts/angular.min.js"></script>
+    <script src="public/javascripts/angular-route.min.js"></script>
+    <script src="public/javascripts/vendor/modernizr.js"></script>
+    <script src="public/javascripts/script.js"></script> 
+    <script src="public/javascripts/app.js"></script> 
+    <script src="public/javascripts/controllers.js"></script> 
+   
+  </head>
+  <body ng-controller="WelcomeCntrl">
+    <div id="Wrapper">
+      <p>{{meetings.name}}</p>
+      <div class="top row">
+        <a id="Home" class="topNavLink active" href="">Home</a>
+        <a id="About" class="topNavLink" href="about/about.html">About</a>
+        <a id="Join / Schedule" class="topNavLink" href="">Join / Schedule</a>
+        <a id="Contact" class="topNavLink" href="">Tools</a>
+        <a id="Learn" class="topNavLink" href="">Learn</a>
+        <a id="Contact" class="topNavLink" href="">Contact</a>
+      </div>
+      <div class="slider row">
+        
+      </div>
+      <div class="middle row">
+      <img id="logo" src="public/images/logo.png" alt="Club Logo">
+      <h4 id="MissionStatement" class="header"><q>Become a better web developer, create projects to showcase, collaborate with friends, and give back to the community</q></h4>
+      <a id="LearnMore" class="submit" href="">Learn More</a>
+      </div>
+      <hr>
+      <div class="bottom row">
+        <a id="Site Map" class="bottomNavLink">Site Map</a>
+        <a id="Officers" class="bottomNavLink">Officers</a>
+        <a id="Events" class="bottomNavLink">Events</a>
+        <a id="Members" class="bottomNavLink">Members</a>
+        <a id="History" class="bottomNavLink">History</a>
+        
+      </div>
+      <script src="public/javascripts/vendor/jquery.js"></script>
+      <script src="public/javascripts/foundation.min.js"></script>
+      <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    </div>
+  </body>
+</html>
+
+

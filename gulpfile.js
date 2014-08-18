@@ -12,19 +12,8 @@ var gulp = require ('gulp'),
     jshint = require('gulp-jshint'),
     express = require('express'),
     embedlr = require('gulp-embedlr'),
-    connectlr = require('connect-livereload'),
-    serverport = 5000,
-    connectlrport = 35729;
-
-var server = express();
-
-server.use(connectlr({port: connectlrport}));
-
-server.use(express.static('./dist'));
-
-server.all('/*', function(req, res){
-  res.sendfile('index.html', { root: 'public'});
-});
+    browserify = require('gulp-browserify'),
+    connectlr = require('connect-livereload');
 
 var jsSources = [
   'components/scripts/*.js'
@@ -43,9 +32,13 @@ var viewSources = [
   'views/**/*.html'
 ];
 
+gulp.task('express', function(){
+  var app = express();
+  app.use(express.static(__dirname));
+  app.listen(4000);
+})
+
 gulp.task('dev', function(){
-  server.listen(serverport);
-  lr.listen(connectlrport);
   gulp.run('watch');
 });
 
@@ -98,7 +91,7 @@ gulp.task('watch', function(){
   });
 });
 
-gulp.task('default', ['styles', 'js', 'watch', 'coffee', 'lint', 'browserify']);
+gulp.task('default', ['styles', 'js', 'watch', 'coffee', 'lint', 'browserify', 'express']);
 
 gulp.task('styles', function(){
   gulp.src(styleSources)
