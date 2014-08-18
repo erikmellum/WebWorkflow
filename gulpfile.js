@@ -13,47 +13,22 @@ var gulp = require ('gulp'),
     server = lr();
 
 var jsSources = [
-  'components/scripts/*'
+  'components/scripts/*.js'
 ];
 
 var styleSources = [
-  'components/sass/main.scss'
+  'components/sass/*.scss'
 ];
 
 var coffeeSources = [
   'components/coffee/*.coffee'
 ];
 
-function notifyLiveReload(event) {
-  var fileName = require('path').relative(__dirname, event.path);
-
-  tinylr.changed({
-    body: {
-      files: [fileName]
-    }
-  });
-}
-
-var tinylr;
-gulp.task('livereload', function() {
-  tinylr = require('tiny-lr')();
-  tinylr.listen(4002);
-});
-
-gulp.task('express', function() {
-  var express = require('express');
-  var app = express();
-  app.use(require('connect-livereload')({port: 4002}));
-  app.use(express.static(__dirname));
-  app.listen(4000);
-});
-
 gulp.task('js', function() {
   gulp.src(jsSources)
   .pipe(uglify())
   .pipe(jshint())
   .pipe(concat('script.js'))
-  .pipe(livereload())
   .pipe(gulp.dest('public/javascripts'));
 });
 
@@ -69,12 +44,12 @@ gulp.task('watch', function(){
   gulp.watch(jsSources, ['js']);
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(styleSources, ['styles']);
-  gulp.watch('public/stylesheets/*.css', notifyLiveReload);
-  gulp.watch('public/javascripts/*.js', notifyLiveReload);
-  gulp.watch('*.html', notifyLiveReload);
+  gulp.watch(['public/javascripts/script.js','*.html'], function(e){
+    server.changed(e.path);
+  });
 });
 
-gulp.task('default', ['styles', 'js', 'express', 'livereload', 'watch', 'coffee']);
+gulp.task('default', ['styles', 'js', 'watch', 'coffee']);
 
 gulp.task('styles', function(){
   gulp.src(styleSources)
@@ -85,6 +60,9 @@ gulp.task('styles', function(){
   .pipe(gulp.dest('public/stylesheets'))
   .pipe(rename({suffix: '.min'}))
   .pipe(minifycss())
-  .pipe(livereload())
-  .pipe(gulp.dest('public/stylesheets'));
+  .pipe(gulp.dest('public/stylesheets'))
+  .pipe(livereload());
 });
+
+
+
