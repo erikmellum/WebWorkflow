@@ -5,12 +5,10 @@ var gulp = require ('gulp'),
     livereload = require('gulp-livereload'),
     sass = require('gulp-ruby-sass'),
     coffee = require('gulp-coffee'),
-    lr = require('tiny-lr'),
     autoprefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    server = lr();
+    jshint = require('gulp-jshint');
 
 var jsSources = [
   'components/scripts/*.js'
@@ -24,12 +22,30 @@ var coffeeSources = [
   'components/coffee/*.coffee'
 ];
 
+var viewSources = [
+  'index.html', 
+  'partials/**/*.html',
+  'partials/*.html',
+  'public/*.html'
+];
+
+gulp.task('dev', function(){
+  gulp.run('watch');
+});
+
+gulp.task('lint', function(){
+  gulp.src('public/javascripts/script.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
+});
+
 gulp.task('js', function() {
   gulp.src(jsSources)
   .pipe(uglify())
   .pipe(jshint())
   .pipe(concat('script.js'))
-  .pipe(gulp.dest('public/javascripts'));
+  .pipe(gulp.dest('public/javascripts'))
+  .pipe(livereload());
 });
 
 gulp.task('coffee', function() {
@@ -39,17 +55,14 @@ gulp.task('coffee', function() {
   .pipe(gulp.dest('components/scripts'));
 });
 
-gulp.task('watch', function(){
-  var server = livereload();
-  gulp.watch(jsSources, ['js']);
-  gulp.watch(coffeeSources, ['coffee']);
-  gulp.watch(styleSources, ['styles']);
-  gulp.watch(['public/javascripts/script.js','*.html'], function(e){
-    server.changed(e.path);
-  });
+gulp.task('views', function(){
+  gulp.src('index.html')
+  .pipe(gulp.dest('public/'))
+  .pipe(livereload());
+  gulp.src('partials/**/*')
+  .pipe(gulp.dest('public/views/'))
+  .pipe(livereload());
 });
-
-gulp.task('default', ['styles', 'js', 'watch', 'coffee']);
 
 gulp.task('styles', function(){
   gulp.src(styleSources)
@@ -63,6 +76,20 @@ gulp.task('styles', function(){
   .pipe(gulp.dest('public/stylesheets'))
   .pipe(livereload());
 });
+
+gulp.task('watch', function(){
+  livereload.listen();
+  gulp.watch(jsSources, ['js']);
+  gulp.watch(coffeeSources, ['coffee']);
+  gulp.watch(styleSources, ['styles']);
+  gulp.watch(viewSources, ['views']);
+  gulp.watch(['lint']);
+  gulp.watch(['public/*.html'], function(e){
+    livereload.changed(e.path);
+  }).on('change', livereload.changed);
+});
+
+gulp.task('default', ['styles', 'js', 'views', 'watch', 'coffee', 'lint']);
 
 
 
