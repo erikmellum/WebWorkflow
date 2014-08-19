@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html>
   <head>
     <title>Chico State Web Development</title>
     <meta charset="utf-8"/>
@@ -7,19 +7,11 @@
     <link rel="stylesheet" type="text/css" href="public/stylesheets/foundation.min.css"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/normalize.min.css"/>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/font-awesome.min.css"/>
-    <script src="public/javascripts/angular.min.js"></script>
-    <script src="public/javascripts/angular-route.min.js"></script>
-    <script src="public/javascripts/vendor/modernizr.js"></script>
-    <script src="public/javascripts/script.js"></script> 
-    <script src="public/javascripts/app.js"></script> 
-    <script src="public/javascripts/controllers.js"></script> 
-   
   </head>
-  <body ng-controller="WelcomeCntrl">
+  <body>
     <div id="Wrapper">
-      <p>{{meetings.name}}</p>
       <div class="top row">
-        <a id="Home" class="topNavLink active" href="">asdf</a>
+        <a id="Home" class="topNavLink active" href="">Home</a>
         <a id="About" class="topNavLink" href="about/about.html">About</a>
         <a id="Join / Schedule" class="topNavLink" href="">Join / Schedule</a>
         <a id="Contact" class="topNavLink" href="">Tools</a>
@@ -27,7 +19,7 @@
         <a id="Contact" class="topNavLink" href="">Contact</a>
       </div>
       <div class="slider row">
-        
+        <h3 id="SliderText" class="header">This text will cycle with news and event information</h3>
       </div>
       <div class="middle row">
       <img id="logo" src="public/images/logo.png" alt="Club Logo">
@@ -41,13 +33,11 @@
         <a id="Events" class="bottomNavLink">Events</a>
         <a id="Members" class="bottomNavLink">Members</a>
         <a id="History" class="bottomNavLink">History</a>
-        
       </div>
-      <script src="public/javascripts/vendor/jquery.js"></script>
+      <script src="public/javascripts/script.js"></script> 
       <script src="public/javascripts/foundation.min.js"></script>
+      <script src="public/javascripts/angular.min.js"></script>
       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </div>
   </body>
 </html>
-
-
