@@ -1,19 +1,19 @@
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'meetingsController',  
+  'meetingControllers'
 ]);
 
-myApp.config(['$routeProvider', function($routeProvider){
+myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-  when('/meetings', {
+  when('/meeting', {
     templateUrl: 'views/meetings.html',
-    controller: 'MeetingsController'
+    controller: 'MeetingController'
   }).
-  when('/details/:meetingId', {
+  when('/meeting/:itemId', {
     templateUrl: 'views/details.html',
     controller: 'DetailsController'
   }).
   otherwise({
-    redirectTo: '/meeting'
+    redirectTo: '/'
   });
 }]);

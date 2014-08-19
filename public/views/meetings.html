@@ -1,4 +1,10 @@
-<ul>
-  <li ng-repeat="item in meetings">
-  <h3 id="SliderText" class="header"><a href="#/details/{{meetings.indexOf(item)}}">Meeting</a></h3></li>
-</ul>
+<div>
+  <ul>
+    <li ng-repeat="item in meetings">
+      <a ng-href="#/meetings/{{meetings.indexOf(item)}}" target="_self">
+        <h3 id="SliderText" class="header">Meeting</h3>
+        <h3>{{item.name}}</h3>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,3 +1,3 @@
-$(function() {
+(function() {
   return $('h1').append('Hello');
 });

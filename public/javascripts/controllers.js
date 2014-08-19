@@ -1,15 +1,29 @@
-var meetingsController = angular.module('meetingsController', []);
+var meetingControllers = angular.module('meetingControllers', ['ngAnimate']);
 
-  meetingsController.controller('MeetingsController', ['$scope', '$http', function($scope, $http) {
-  $http.get('data.json').success(function(data){
+meetingControllers.controller('MeetingController', ['$scope', '$http', function($scope, $http) {
+  $http.get('javascripts/data.json').success(function(data) {
     $scope.meetings = data;
+    $scope.meetingOrder = 'name';
   });
 }]);
 
-  myApp.controller('DetailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
-  $http.get('data.json').success(function(data){
+meetingControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
+  $http.get('javascripts/data.json').success(function(data) {
     $scope.meetings = data;
-    $scope.whichMeeting = $routeParams.meetingId;
+    $scope.whichItem = $routeParams.itemId;
+
+    if ($routeParams.itemId > 0) {
+      $scope.prevItem = Number($routeParams.itemId)-1;
+    } else {
+      $scope.prevItem = $scope.meetings.length-1;
+    }
+
+    if ($routeParams.itemId < $scope.meetings.length-1) {
+      $scope.nextItem = Number($routeParams.itemId)+1;
+    } else {
+      $scope.nextItem = 0;
+    }
+
   });
 }]);
 

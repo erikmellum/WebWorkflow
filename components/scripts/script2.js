@@ -1,1 +1,1 @@
-function two(){return "two"}
+function two(){return "two"};

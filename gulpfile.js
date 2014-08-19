@@ -26,7 +26,8 @@ var viewSources = [
   'index.html', 
   'partials/**/*.html',
   'partials/*.html',
-  'public/*.html'
+  'public/*.html',
+  'public/views/*.html'
 ];
 
 gulp.task('dev', function(){

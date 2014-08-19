@@ -28,7 +28,7 @@ body {
 /* line 20, ../main.scss */
 #Wrapper {
   margin: 0 auto;
-  width: 1100px;
+  width: 960px;
   height: 100%;
   background: #EFEFEF;
 }
@@ -63,7 +63,7 @@ body {
 
 /* line 43, ../main.scss */
 .topNavLink {
-  margin: 50px 0px;
+  margin: 50px 3px;
   padding: 13px 2px;
   text-align: center;
   -webkit-box-shadow: 2px 2px 10px 0px #333;
@@ -76,12 +76,13 @@ body {
   -webkit-transition-duration: .5s;
           transition-duration: .5s;
   color: #333;
-  width: 200px;
+  display: block;
+  width: 140px;
   height: 50px;
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 60, ../main.scss */
+/* line 61, ../main.scss */
 .topNavLink:hover {
   background: -webkit-linear-gradient(#eeeeee, #cccccc);
   background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
@@ -89,35 +90,35 @@ body {
   -webkit-box-shadow: 0px 5px 10px 2px #333;
           box-shadow: 0px 5px 10px 2px #333;
   height: 55px;
-  width: 210px;
+  width: 170px;
   font-size: 110%;
 }
 
-/* line 71, ../main.scss */
+/* line 72, ../main.scss */
 .active {
   background: -webkit-linear-gradient(#888888, #aaaaaa) !important;
   background: -webkit-gradient(linear, left top, left bottom, from(#888888), to(#aaaaaa)) !important;
   background: linear-gradient(#888888, #aaaaaa) !important;
 }
 
-/* line 78, ../main.scss */
+/* line 79, ../main.scss */
 #logo {
   display: block;
   margin: 0px auto;
 }
 
-/* line 83, ../main.scss */
+/* line 84, ../main.scss */
 .slider {
   height: 70px;
   width: 100%;
 }
 
-/* line 88, ../main.scss */
+/* line 89, ../main.scss */
 #SliderText {
   text-align: center;
 }
 
-/* line 92, ../main.scss */
+/* line 93, ../main.scss */
 .header {
   margin: 20px 0px;
   text-align: center;
@@ -125,12 +126,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* line 99, ../main.scss */
+/* line 100, ../main.scss */
 #MissionStatement {
   margin: 20px 0px;
 }
 
-/* line 102, ../main.scss */
+/* line 103, ../main.scss */
 #LearnMore {
   border-radius: 5px;
   margin: 20px auto;
@@ -151,7 +152,7 @@ body {
   border: none;
 }
 
-/* line 121, ../main.scss */
+/* line 122, ../main.scss */
 #LearnMore:hover {
   font-size: 110%;
   outline: #00FF00 solid thin;
@@ -159,18 +160,18 @@ body {
   width: 205px;
 }
 
-/* line 129, ../main.scss */
+/* line 130, ../main.scss */
 #LearnMore:focus {
   outline: 0;
 }
 
-/* line 134, ../main.scss */
+/* line 135, ../main.scss */
 .bottom {
   height: 200px;
   text-align: center;
 }
 
-/* line 139, ../main.scss */
+/* line 140, ../main.scss */
 .bottomNavLink {
   margin: 40px 5px;
 }

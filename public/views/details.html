@@ -1,7 +1,7 @@
 <section>
-    <div ng-model="meetings">
-      <h1>{{meetings[whichItem].name</h1>
-      <p>{{meetings.date}}, {{meetings.time}}</p>
-
-    </div>
+  <div ng-model="meetings">
+    <a href="#/meetings/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/meetings/{{nextItem}}" class="btn btn-right">&gt;</a>
+    <h1>{{meetings[whichItem].name}} , {{meetings.date}}, {{meetings.time}}</h1>
+  </div>
 </section>
