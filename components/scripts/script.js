@@ -1,3 +1,3 @@
 (function() {
-  return $('h1').append('Hello');
+  return $('h1').append('World');
 });

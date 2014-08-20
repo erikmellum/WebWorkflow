@@ -14,6 +14,23 @@ var jsSources = [
   'components/scripts/*.js'
 ];
 
+var appSources = [
+  'components/scripts/app/*.js'
+];
+
+var jslibSources = [
+  'components/scripts/lib/*.js',
+  'components/scripts/lib/**/*.js'
+];
+
+var csslibSources = [
+  'components/css/lib/*.css'
+];
+
+var jsonSources = [
+  'components/scripts/json/*.json'
+];
+
 var styleSources = [
   'components/sass/*.scss'
 ];
@@ -30,20 +47,41 @@ var viewSources = [
   'public/views/*.html'
 ];
 
-gulp.task('dev', function(){
-  gulp.run('watch');
+gulp.task('lib', function(){
+// Javascript libs livereload
+  gulp.src(jslibSources)
+  .pipe(concat('vendor.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('public/javascripts/lib'))
+  .pipe(livereload());
+// CSS libs livereload
+  gulp.src(csslibSources)
+  .pipe(concat('vendor.css'))
+  .pipe(minifycss())
+  .pipe(gulp.dest('public/stylesheets/lib'))
+  .pipe(livereload());
 });
 
-gulp.task('lint', function(){
-  gulp.src('public/javascripts/script.js')
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'));
+gulp.task('json', function(){
+// JSON livereload
+  gulp.src(jsonSources)
+  .pipe(gulp.dest('public/javascripts/json'))
+  .pipe(livereload());
+});
+
+gulp.task('app', function(){
+// App livereload
+  gulp.src(appSources)
+  .pipe(uglify())
+  .pipe(gulp.dest('public/javascripts/app'))
+  .pipe(livereload());
 });
 
 gulp.task('js', function() {
+// Javascript hint, uglify, concat, and livereload
   gulp.src(jsSources)
-  .pipe(uglify())
   .pipe(jshint())
+  .pipe(uglify())
   .pipe(concat('script.js'))
   .pipe(gulp.dest('public/javascripts'))
   .pipe(livereload());
@@ -57,15 +95,19 @@ gulp.task('coffee', function() {
 });
 
 gulp.task('views', function(){
-  gulp.src('index.html')
-  .pipe(gulp.dest('public/'))
-  .pipe(livereload());
+  // Partials livereload
   gulp.src('partials/**/*')
   .pipe(gulp.dest('public/views/'))
+  .pipe(livereload());
+
+  // Index livereload
+  gulp.src('index.html')
+  .pipe(gulp.dest('public/'))
   .pipe(livereload());
 });
 
 gulp.task('styles', function(){
+  // CSS autoprefixer, minify, and livereload
   gulp.src(styleSources)
   .pipe(sass({style: 'expanded', lineNumbers: true}))
     .on('error', gutil.log)
@@ -81,16 +123,18 @@ gulp.task('styles', function(){
 gulp.task('watch', function(){
   livereload.listen();
   gulp.watch(jsSources, ['js']);
+  gulp.watch(jsonSources, ['json']);
+  gulp.watch(appSources, ['app']);
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(styleSources, ['styles']);
   gulp.watch(viewSources, ['views']);
-  gulp.watch(['lint']);
+  gulp.watch(jslibSources, csslibSources, ['lib']);
   gulp.watch(['public/*.html'], function(e){
     livereload.changed(e.path);
   }).on('change', livereload.changed);
 });
 
-gulp.task('default', ['styles', 'js', 'views', 'watch', 'coffee', 'lint']);
+gulp.task('default', ['styles', 'js', 'views', 'watch', 'coffee', 'lib', 'json', 'app']);
 
 
 

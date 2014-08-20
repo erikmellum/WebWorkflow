@@ -1,53 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
   <head>
-    <title>Chico State Web Development</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.min.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/foundation.min.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.min.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css"/>
-    <script src="javascripts/angular.min.js"></script>
-    <script src="javascripts/angular-route.min.js"></script>
-    <script src="javascripts/angular-animate.min.js"></script>
-    <script src="javascripts/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.min.css"/>
+    <link rel="stylesheet" href="stylesheets/lib/foundation.min.css"/>
+    <link rel="stylesheet" href="stylesheets/lib/normalize.min.css"/>
+    <link rel="stylesheet" href="stylesheets/lib/font-awesome.min.css"/>
+    <script src="javascripts/lib/angular.min.js"></script>
+    <script src="javascripts/lib/angular-route.min.js"></script>
+    <script src="javascripts/lib/angular-animate.min.js"></script>
+    <script src="javascripts/lib/vendor/modernizr.js"></script>
     <script src="javascripts/script.js"></script>
-    <script src="javascripts/app.js"></script>
-    <script src="javascripts/controllers.js"></script>
+    <script src="javascripts/app/app.js"></script>
+    <script src="javascripts/app/controllers.js"></script>
   </head>
   <body>
     <div id="Wrapper">
-      <div class="top row">
-        <a id="Home" class="topNavLink active" href="">Home</a>
-        <a id="About" class="topNavLink" href="about/about.html">About</a>
-        <a id="Join / Schedule" class="topNavLink" href="">Join / Schedule</a>
-        <a id="Contact" class="topNavLink" href="">Tools</a>
-        <a id="Learn" class="topNavLink" href="">Learn</a>
-        <a id="Contact" class="topNavLink" href="">Contact</a>
-      </div>
-      <div class="slider row" ng-view>
-      
-      </div>
-      <div class="middle row">
-      <img id="logo" src="images/logo.png" alt="Club Logo">
-      <h4 id="MissionStatement" class="header"><q>Become a better web developer, create projects to showcase, collaborate with friends, and give back to the community</q></h4>
-      <a id="LearnMore" class="submit" href="">Learn More</a>
-      </div>
-      <hr>
-      <div class="bottom row">
-        <a id="Site Map" class="bottomNavLink">Site Map</a>
-        <a id="Officers" class="bottomNavLink">Officers</a>
-        <a id="Events" class="bottomNavLink">Events</a>
-        <a id="Members" class="bottomNavLink">Members</a>
-        <a id="History" class="bottomNavLink">History</a>
-      </div>
-      <script src="javascripts/vendor/jquery.js"></script>
-      <script src="javascripts/foundation.min.js"></script>
+      <ng-include src="'views/templates/header.html'"></ng-include>
+      <ng-include src="'views/templates/slider.html'"></ng-include>
+      <div class="middle row" ng-view></div>
+      <ng-include src="'views/templates/footer.html'"></ng-include>
+      <ng-include src="'views/templates/jsdefaults.html'"></ng-include>
       <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </div>
   </body>

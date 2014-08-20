@@ -1,10 +1,17 @@
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'meetingControllers'
+  'meetingControllers',
+  'sliderController'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
+  when('/home', {
+    templateUrl: 'views/pages/home.html'
+  }).
+  when('/blog', {
+    templateUrl: 'views/pages/blog.html'
+  }).
   when('/meeting', {
     templateUrl: 'views/meetings.html',
     controller: 'MeetingController'
@@ -14,6 +21,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
     controller: 'DetailsController'
   }).
   otherwise({
-    redirectTo: '/'
+    redirectTo: '/home',
   });
 }]);

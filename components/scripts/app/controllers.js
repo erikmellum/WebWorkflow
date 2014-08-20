@@ -1,14 +1,21 @@
 var meetingControllers = angular.module('meetingControllers', ['ngAnimate']);
+var sliderController = angular.module('sliderController', ['ngAnimate']);
+
+sliderController.controller('SliderController', ['$scope', '$http', function($scope, $http){
+  $http.get('javascripts/json/sliderdata.json').success(function(data){
+    $scope.sliderData = data;
+  });
+}]);
 
 meetingControllers.controller('MeetingController', ['$scope', '$http', function($scope, $http) {
-  $http.get('javascripts/data.json').success(function(data) {
+  $http.get('javascripts/json/data.json').success(function(data) {
     $scope.meetings = data;
     $scope.meetingOrder = 'name';
   });
 }]);
 
 meetingControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
-  $http.get('javascripts/data.json').success(function(data) {
+  $http.get('javascripts/json/data.json').success(function(data) {
     $scope.meetings = data;
     $scope.whichItem = $routeParams.itemId;
 

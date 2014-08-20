@@ -1,2 +1,2 @@
 ->
-  $('h1').append('Hello')
+  $('h1').append('World')
