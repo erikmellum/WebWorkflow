@@ -9,8 +9,8 @@ myApp.config(['$routeProvider', function($routeProvider) {
   when('/home', {
     templateUrl: 'views/pages/home.html'
   }).
-  when('/blog', {
-    templateUrl: 'views/pages/blog.html'
+  when('/about', {
+    templateUrl: 'views/pages/about.html'
   }).
   when('/meeting', {
     templateUrl: 'views/meetings.html',
