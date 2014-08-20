@@ -1,4 +1,4 @@
 WebWorkflow
 ===========
 
-Sample workflow utilizing Node, Gulp, Sass, Coffee, Foundation, and Livereload
+Sample workflow utilizing Node, Angular, Gulp, Sass, Coffee, Foundation, Font-Awesome, Jquery, and Livereload
