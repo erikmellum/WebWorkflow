@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
-    <% include partials/template/head.ejs %>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <script src="javascripts/angular.min.js"></script>
+    <script src="javascripts/angular-route.min.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/controllers.js"></script>
   </head>
-  <body>
-    <div id="Wrapper">
-      <header>
-        <% include partials/template/header.ejs %>
-      </header>
-      <section class="content">
-        <% include partials/page/home.ejs %>
-      </section>
-      <footer>
-        <% include partials/template/footer.ejs %>
-      </footer>
-      <% include partials/template/jsdefaults.ejs %>
-    </div>
+  <body ng-controller="MainController">
+    <span>{{hello}}</span>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
   </body>
 </html>
