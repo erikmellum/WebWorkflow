@@ -24,8 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
   console.log("Connected to DB!")
@@ -37,6 +39,7 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
 /// error handlers
 
 // development error handler
